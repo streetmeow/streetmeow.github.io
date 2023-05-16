@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>D-day 계산기</title>
+	</head>
+	<body>
+			<h1>D-day</h1>
+			<div id="count">
+
+	
+<script>	// D-Day
+const dday = new Date("2023-05-05:13:00:00+0900").getTime();
+
+setInterval(function() {
+  const today = new Date().getTime();
+  const gap = dday - today;
+  const day = Math.floor(gap / (1000 * 60 * 60 * 24));
+  const hour = Math.floor((gap % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const min = Math.floor((gap % (1000 * 60 * 60)) / (1000 * 60));
+  const sec = Math.floor((gap % (1000 * 60)) / 1000);
+
+  	document.getElementById("count").innerHTML = "D-DAY까지 " + day + "일 " + hour + "시간 " + min + "분 " + sec + "초 남았습니다.";
+}, 1000);
+</script>
+	</body>
+	</html>
